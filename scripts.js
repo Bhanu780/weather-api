@@ -7,14 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const descriptionDisplay = document.getElementById("description");
   const errorMessage = document.getElementById("error-messag");
 
-  const API_KEY = "YOUR-API-KEY"; //env variables
+  const API_KEY = "YOUR-API-KEY"; 
 
   getWeatherBtn.addEventListener("click", async () => {
     const city = cityInput.value.trim();
     if (!city) return;
 
-    // it may throw an error
-    // server/database is always in another continent
+   
 
     try {
       const weatherData = await fetchWeatherData(city);
@@ -44,9 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const { name, main, weather } = data;
     cityNameDisplay.textContent = name;
     temperatureDisplay.textContent = `Temperature : ${main.temp}`;
-    descriptionDisplay.textContent = `Weather : ${weather[0].description}`;
-
-    //unlock the display
+    descriptionDisplay.text
+    
     weatherInfo.classList.remove("hidden");
     errorMessage.classList.add("hidden");
   }
